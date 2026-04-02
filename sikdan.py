@@ -64,13 +64,4 @@ def send_kakao_message(meal_type):
     print(f"{meal_type} 발송 결과: {response.status_code}")
 
 if __name__ == "__main__":
-    now = datetime.now()
-    hour = now.hour
-    minute = now.minute
-
-    if hour == 6 and 30 <= minute < 40:
-        send_kakao_message("아침")
-    elif hour == 11 and 0 <= minute < 10:
-        send_kakao_message("점심")
-    elif hour == 16 and 30 <= minute < 40:
-        send_kakao_message("저녁")
+    send_kakao_message("점심")
