@@ -1,0 +1,22 @@
+name: 식단 알림 발송
+
+on:
+  schedule:
+    - cron: '30 21 * * *'  # 한국시간 06:30
+    - cron: '0 2 * * *'    # 한국시간 11:00
+    - cron: '30 7 * * *'   # 한국시간 16:30
+  workflow_dispatch:
+
+jobs:
+  send-sikdan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Python 설정
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: 라이브러리 설치
+        run: pip install requests
+      - name: 식단 발송
+        run: python sikdan.py
