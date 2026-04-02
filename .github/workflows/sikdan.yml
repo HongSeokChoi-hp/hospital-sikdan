@@ -2,9 +2,9 @@ name: 식단 알림 발송
 
 on:
   schedule:
-    - cron: '30 21 * * *'  # 한국시간 06:30
-    - cron: '0 2 * * *'    # 한국시간 11:00
-    - cron: '30 7 * * *'   # 한국시간 16:30
+    - cron: '30 21 * * *'
+    - cron: '0 2 * * *'
+    - cron: '30 7 * * *'
   workflow_dispatch:
 
 jobs:
